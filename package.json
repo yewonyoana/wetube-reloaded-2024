@@ -1,0 +1,25 @@
+{
+	"name": "wetube-reloaded-2024",
+	"version": "1.0.0",
+	"description": "",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yewonyoana/wetube-reloaded-2024"
+	},
+	"scripts": {
+		"dev": "nodemon --exec babel-node src/server.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.18.2"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.23.9",
+		"@babel/node": "^7.23.9",
+		"@babel/preset-env": "^7.23.9",
+		"install": "^0.13.0",
+		"nodemon": "^3.0.3",
+		"npm": "^10.4.0"
+	}
+}
