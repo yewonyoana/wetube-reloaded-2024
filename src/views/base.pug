@@ -1,0 +1,22 @@
+doctype html
+html(lang="ko")
+    head 
+        //- looking for a #{pageTitle} variable
+        title #{pageTitle} | Wetube
+        link(rel="stylesheet" href="https://unpkg.com/mvp.css")
+    body 
+        header
+            h1=pageTitle
+            //- make an empty block so other pug files can add codes
+            nav 
+                ul 
+                    li
+                        a(href="/videos/upload") Upload Video
+                    li 
+                        a(href="/") Home
+                    li 
+                        a(href="/search") Search
+        
+        main
+            block content
+    include partials/footer

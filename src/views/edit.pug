@@ -1,0 +1,10 @@
+extends base
+
+block content 
+    h4 Update Video
+    //- modify data = POST, get data = GET
+    form(method="POST")
+        input(name="title", placeholder="Video Title", value=video.title, required)
+        input(type="text", name="description", placeholder="Description", value=video.description, required)
+        input(type="text", name="hashtags", placeholder="Hashtags, Separate by Comma", value=video.hashtags.join(), required)
+        input(value="Save", type="submit")

@@ -7,13 +7,15 @@
 		"url": "git+https://github.com/yewonyoana/wetube-reloaded-2024"
 	},
 	"scripts": {
-		"dev": "nodemon --exec babel-node src/server.js"
+		"dev": "nodemon --exec babel-node src/init.js"
 	},
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
 		"express": "^4.18.2",
-		"morgan": "^1.10.0"
+		"mongoose": "^8.1.2",
+		"morgan": "^1.10.0",
+		"pug": "^3.0.2"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.23.9",
