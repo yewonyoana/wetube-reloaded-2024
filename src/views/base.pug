@@ -9,9 +9,9 @@ html(lang="ko")
             ul 
                 if loggedIn 
                     li 
-                        a(href="/my-profile") #{loggedInUser.name}'s Profile
+                        a(href="/users/edit") Edit Profile
                     li 
-                        a(href="/logout") Logout
+                        a(href="/users/logout") Logout
                 else
                     li 
                         a(href="/join") Join
@@ -20,10 +20,16 @@ html(lang="ko")
         header
             h1=pageTitle
             //- make an empty block so other pug files can add codes
-            nav 
-                ul 
+        nav 
+            ul
+                if loggedIn
+                    li 
+                        a(href="/") Home
+                    li 
+                        a(href="/search") Search
                     li
                         a(href="/videos/upload") Upload Video
+                else
                     li 
                         a(href="/") Home
                     li 

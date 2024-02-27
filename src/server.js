@@ -29,11 +29,13 @@ app.use(
 	// session ID saved on cookie which will also be saved in the backend
 	// each browser, including incognito, has different session ID
 	session({
-		secret: "hello",
-		resave: true,
-		saveUninitialized: true,
+		// string of text used to assign cookie to check that our backend is which gave the user the cookie (cookie can be stolen)
+		secret: process.env.COOKIE_SECRET,
+		// only giving cookie only when session is modified (the user who loggedIn), no cookie for anonymous users
+		resave: false,
+		saveUninitialized: false,
 		// saving mongo database to store sessions so that loggedIn users are remembered even if server is killed then restarted
-		store: MongoStore.create({ mongoUrl: "mongodb://127.0.0.1:27017/wetube" }),
+		store: MongoStore.create({ mongoUrl: process.env.DB_URL }),
 	})
 );
 

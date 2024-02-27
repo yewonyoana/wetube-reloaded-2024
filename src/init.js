@@ -1,6 +1,8 @@
 // init will be importers
 
 // importing file
+// dotenv reads env file and puts variable inside the according value, required as soon as possible when server is turned on
+import "dotenv/config";
 import "./db";
 import "./models/Video";
 import "./models/User";
