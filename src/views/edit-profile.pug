@@ -1,9 +1,16 @@
 extends base
 
-block content 
-    form(method="POST")
+block content
+    img(src="/" + loggedInUser.avatarUrl, width="100", height="100")
+    //- encoding type to send files to backend
+    form(method="POST", enctype="multipart/form-data")
+        label(for="avatar") Profile Image
+        input(type="file", id="avatar", name="avatar", accept="image/*")
         input(name="name", type="text", placeholder="Name", value=loggedInUser.name, required)
         input(name="email", type="email", placeholder="Email", value=loggedInUser.email, required)
         input(name="username", type="text", placeholder="Username", value=loggedInUser.username, required)
         input(name="location", type="text", placeholder="Location", value=loggedInUser.location, required)
         input(type="submit", value="Update")
+        if !loggedInUser.socialOnly
+            hr
+            a(href="change-password") Change Password &rarr;

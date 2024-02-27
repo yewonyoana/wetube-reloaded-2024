@@ -44,6 +44,7 @@ app.use(
 
 // localsMiddleware must be used after the session to access and get the info in the session middleware
 app.use(localsMiddleware);
+app.use("/uploads", express.static("uploads"));
 app.use("/", rootRouter);
 app.use("/videos", videoRouter);
 app.use("/users", userRouter);

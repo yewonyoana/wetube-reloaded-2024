@@ -1,3 +1,5 @@
+import multer from "multer";
+
 export const localsMiddleware = (req, res, next) => {
 	// logging in the user by adding info into req.session object
 	//to get if user is logged in (true) or not (false)
@@ -26,3 +28,17 @@ export const publicOnlyMiddleware = (req, res, next) => {
 		return res.redirect("/");
 	}
 };
+
+// middleware to upload files from users to "uploads"
+export const avatarUpload = multer({
+	dest: "uploads/avatars/",
+	limits: {
+		fileSize: 3000000,
+	},
+});
+export const videoUpload = multer({
+	dest: "uploads/videos/",
+	limits: {
+		fileSize: 10000000,
+	},
+});

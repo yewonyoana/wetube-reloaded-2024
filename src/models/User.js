@@ -9,12 +9,16 @@ const userSchema = new mongoose.Schema({
 	password: { type: String },
 	name: { type: String, required: true },
 	location: String,
+	videos: [{ type: mongoose.Schema.Types.ObjectId, ref: "Video" }],
 });
 
 // intercepting the saving event to do the following function first
 userSchema.pre("save", async function () {
-	// this from User.create in userController
-	this.password = await bcrypt.hash(this.password, 5);
+	// with "if" the password will be modified only when it is modified
+	if (this.isModified("password")) {
+		// this from User.create in userController
+		this.password = await bcrypt.hash(this.password, 5);
+	}
 });
 
 const User = mongoose.model("User", userSchema);
