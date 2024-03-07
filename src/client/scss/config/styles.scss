@@ -1,0 +1,44 @@
+// configs
+@import "_variables.scss";
+@import "_reset.scss";
+
+// components
+@import "../components/header.scss";
+@import "../components/footer.scss";
+@import "../components/video.scss";
+@import "../components/shared.scss";
+@import "../components/forms.scss";
+@import "../components/social-login.scss";
+@import "../components/video-player.scss";
+
+// screens
+@import "../screens/home.scss";
+@import "../screens/search.scss";
+@import "../screens/profile.scss";
+@import "../screens/edit-profile.scss";
+
+// defaults
+* {
+	box-sizing: border-box;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	width: 100vw;
+	height: 100vh;
+	padding: 35px;
+	background-color: $black;
+	color: $white;
+}
+
+main {
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+}

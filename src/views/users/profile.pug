@@ -2,7 +2,14 @@ extends ../base
 include ../mixins/video
 
 block content
-    each video in user.videos
-        +video(video)
-    else
-        h4 No Videos 🥺
+    div.profile-data
+        if loggedInUser.avatarUrl
+            img(src=loggedInUser.avatarUrl).avatar
+        else
+            span 😎
+        h3=user.name
+    div.video-grid
+        each video in user.videos
+            +video(video)
+        else
+            p.empty__message No videos!

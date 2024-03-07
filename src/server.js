@@ -10,7 +10,7 @@ import rootRouter from "./routers/rootRouter";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
 import { localsMiddleware } from "./middleware";
-
+import apiRouter from "./routers/apiRouter";
 // create express app
 const app = express();
 const logger = morgan("dev");
@@ -44,10 +44,13 @@ app.use(
 
 // localsMiddleware must be used after the session to access and get the info in the session middleware
 app.use(localsMiddleware);
+// asking assets to make users look into the designed folders
 app.use("/uploads", express.static("uploads"));
+app.use("/static", express.static("assets"));
 app.use("/", rootRouter);
 app.use("/videos", videoRouter);
 app.use("/users", userRouter);
+app.use("/api", apiRouter);
 
 // middleware = software in the middle between request and response
 // middleware are handlers/controllers and vice-versa

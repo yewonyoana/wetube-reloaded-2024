@@ -1,0 +1,25 @@
+.edit-profile__form {
+	label {
+		text-transform: uppercase;
+		font-style: italic;
+		font-size: $medium;
+		opacity: 0.5;
+		margin-bottom: 15px;
+		display: block;
+	}
+}
+
+.edit-profile__password {
+	margin-top: 50px;
+	text-align: center;
+	a {
+		text-transform: uppercase;
+		text-decoration: underline;
+		font-style: italic;
+		font-size: $medium;
+		opacity: 0.5;
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
