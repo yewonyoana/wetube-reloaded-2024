@@ -4,6 +4,7 @@
 import express from "express";
 import morgan from "morgan";
 import session from "express-session";
+import flash from "express-flash";
 import MongoStore from "connect-mongo";
 // importing default export
 import rootRouter from "./routers/rootRouter";
@@ -26,6 +27,7 @@ app.use((req, res, next) => {
 app.use(logger);
 // makes express application understand and transform html form values into javascript that can be used later
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // session middleware from express-session
 // anytime a browser interacts with backend, it sends the backend cookie (pieces of info that the backend can give to browser)
@@ -47,6 +49,7 @@ app.use(
 // allows to make global middlewares that can be used anywhere
 // order: app.use -> app.get
 
+app.use(flash());
 // localsMiddleware must be used after the session to access and get the info in the session middleware
 app.use(localsMiddleware);
 // asking assets to make users look into the designed folders
