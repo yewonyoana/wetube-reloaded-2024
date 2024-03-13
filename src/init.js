@@ -9,7 +9,7 @@ import "./models/User";
 import "./models/Comments";
 import app from "./server";
 
-const PORT = process.env.PORT || 4000;
+const PORT = 10000;
 
 // listen to external connection
 const handleListening = () =>
