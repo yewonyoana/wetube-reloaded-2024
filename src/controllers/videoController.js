@@ -1,6 +1,6 @@
 import User from "../models/User";
-import Comment from "../models/Comments";
 import Video from "../models/Video";
+import Comment from "../models/Comments";
 
 // configure app
 // req, res: send request to browser -> must return a response
@@ -82,8 +82,8 @@ export const postUpload = async (req, res) => {
 		const newVideo = await Video.create({
 			title,
 			description,
-			fileUrl: video[0].path,
-			thumbUrl: thumb[0].path,
+			fileUrl: video[0].location,
+			thumbUrl: thumb[0].location,
 			owner: _id,
 			hashtags: Video.formatHashtags(hashtags),
 		});
