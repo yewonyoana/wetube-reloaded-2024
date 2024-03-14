@@ -9,8 +9,8 @@ mongoose.connect(process.env.DB_URL, {
 
 const db = mongoose.connection;
 
-const handleError = () => console.log("DB Error", error);
 const handleOpen = () => console.log("✅ Connected to DB");
+const handleError = (error) => console.log("DB Error");
 
 // show error when there is database error, happen all the time with "on"
 db.on("error", handleError);
