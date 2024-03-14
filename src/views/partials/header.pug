@@ -1,10 +1,9 @@
 header
     section 
-        div 
-            a(href="/").header__title
-                span YouTube
-            a(href="/search").header__search
-                i.fas.fa-search
+        a(href="/").header__title
+            i.fab.fa-youtube
+        form(method="GET" action="/search/").search__form 
+            input(type="text", name="keyword", placeholder="Search")
         nav.header__btns
             if loggedIn 
                 span
@@ -12,7 +11,7 @@ header
                 span
                     a(href=`/users/${loggedInUser._id}`)
                         if !loggedInUser.avatarUrl
-                            span HAHA
+                            span :)
                         else
                             if loggedInUser.avatarUrl
                                 if loggedInUser.avatarUrl.includes("github")

@@ -4,7 +4,7 @@ header {
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 15px;
+	margin-bottom: 30px;
 	text-transform: uppercase;
 	font-style: italic;
 	section {
@@ -12,6 +12,14 @@ header {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		.header__title {
+			font-size: 80px;
+			color: red;
+			margin-right: 10px;
+			&:hover {
+				color: white;
+			}
+		}
 		.header__btns {
 			span {
 				padding: 10px;

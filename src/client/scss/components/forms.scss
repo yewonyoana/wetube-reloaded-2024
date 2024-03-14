@@ -13,17 +13,25 @@ input:not(input[type="range"]) {
 	font-size: $default;
 	color: white;
 	width: 90%;
+	&::placeholder {
+		text-transform: uppercase;
+		font-style: italic;
+		font-size: $small;
+	}
+}
+
+input[type="submit"] {
+	background-color: red !important;
 }
 
 input[type="submit"],
 .social__btn {
-	display: block;
-	padding: 10px 20px;
-	border-radius: 30px;
-	text-transform: uppercase;
-	font-style: italic;
-	font-size: $medium;
-	background-color: red;
-	text-align: center;
-	cursor: pointer;
+	display: block !important;
+	padding: 10px 20px !important;
+	border-radius: 30px !important;
+	text-transform: uppercase !important;
+	font-style: italic !important;
+	font-size: $medium !important;
+	text-align: center !important;
+	cursor: pointer !important;
 }

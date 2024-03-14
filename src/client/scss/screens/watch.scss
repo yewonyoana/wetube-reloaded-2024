@@ -3,21 +3,27 @@
 	display: flex;
 	flex-direction: column;
 	.video__title {
-		font-size: 26px;
-		margin-bottom: 5px;
+		text-transform: uppercase;
+		font-size: $big;
+		margin-bottom: 10px;
 	}
-	.video__createdAt {
-		font-size: 12px;
-	}
-	.video__owner {
-		margin-bottom: 5px;
-		font-size: 14px;
-		a {
-			color: cornflowerblue;
-			text-decoration: underline;
+	.video__metadata {
+		font-size: $medium;
+		font-weight: 100;
+		display: flex;
+		flex-direction: column;
+		color: $gray;
+		.video__owner {
+			a {
+				text-decoration: underline;
+			}
+		}
+		.video__date {
+			margin: 10px 0px;
 		}
 	}
 }
+
 .video__comments {
 	display: flex;
 	flex-direction: column;

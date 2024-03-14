@@ -2,37 +2,41 @@ const videoContainer = document.getElementById("videoContainer");
 const form = document.getElementById("commentForm");
 const deleteIcon = document.querySelectorAll(".delete__icon");
 
-const addComment = (text, id) => {
+const addComment = (text, id, userName) => {
 	const videoComments = document.querySelector(".video__comments ul");
 	const newComment = document.createElement("li");
 
 	newComment.dataset.id = id;
 
-	const icon = document.createElement("i");
-	const span = document.createElement("span");
+	const username = document.createElement("span");
+	const comment = document.createElement("span");
 	const deleteIcon = document.createElement("span");
 
+	username.className = "comment__owner";
 	newComment.className = "video__comment";
-	icon.className = "fas fa-comment";
 	deleteIcon.className = "delete__icon";
 
-	span.innerText = ` ${text}`;
+	username.innerText = `${userName}`;
+	comment.innerText = `${text}`;
 	deleteIcon.innerText = "❌";
 
-	newComment.appendChild(icon);
-	newComment.appendChild(span);
+	newComment.appendChild(username);
+	newComment.appendChild(comment);
 	newComment.appendChild(deleteIcon);
 
 	videoComments.prepend(newComment);
 
 	deleteIcon.addEventListener("click", handleDelete);
+
+	console.log(newComment);
 };
 
 const handleSubmit = async (event) => {
 	event.preventDefault();
 	const textarea = form.querySelector("textarea");
-	const text = textarea.value;
 	const videoId = videoContainer.dataset.id;
+	const userName = form.dataset.name;
+	const text = textarea.value;
 	if (text === "") {
 		return;
 	}
@@ -46,7 +50,7 @@ const handleSubmit = async (event) => {
 	if (response.status === 201) {
 		textarea.value = "";
 		const { newCommentId } = await response.json();
-		addComment(text, newCommentId);
+		addComment(text, newCommentId, userName);
 	}
 };
 
