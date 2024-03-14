@@ -55,6 +55,16 @@ app.use(localsMiddleware);
 // asking assets to make users look into the designed folders
 app.use("/uploads", express.static("uploads"));
 app.use("/static", express.static("assets"));
+app.use((req, res, next) => {
+	res.setHeader("Access-Control-Allow-Origin", "*");
+	res.header(
+		"Access-Control-Allow-Headers",
+		"Origin, X-Requested-With, Content-Type, Accept"
+	);
+	res.header("Cross-Origin-Embedder-Policy", "credentialless");
+	res.header("Cross-Origin-Opener-Policy", "same-origin");
+	next();
+});
 app.use("/", rootRouter);
 app.use("/videos", videoRouter);
 app.use("/users", userRouter);

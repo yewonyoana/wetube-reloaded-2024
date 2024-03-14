@@ -69,7 +69,7 @@ main {
 	animation: goAway 0.5s ease-in-out forwards;
 	animation-delay: 5s;
 	&.error {
-		background-color: tomato;
+		background-color: red;
 		color: white;
 	}
 }

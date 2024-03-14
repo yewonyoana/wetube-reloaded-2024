@@ -2,10 +2,18 @@
 	margin-top: 20px;
 	display: flex;
 	flex-direction: column;
-	.video__title {
-		text-transform: uppercase;
-		font-size: $big;
-		margin-bottom: 10px;
+	.video__header {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		.video__title {
+			text-transform: uppercase;
+			font-size: $big;
+			margin-bottom: 10px;
+		}
+		.video__btns {
+			display: flex;
+		}
 	}
 	.video__metadata {
 		font-size: $medium;

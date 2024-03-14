@@ -21,18 +21,20 @@ block content
                     i.fas.fa-expand
 
     div.video__data
-        p.video__title=video.description
+        div.video__header
+            p.video__title=video.description
+            if String(video.owner._id) === String(loggedInUser._id)
+                div.video__btns
+                    //- relative url
+                    a(href=`${video.id}/edit`) Edit Video
+                    br
+                    a(href=`${video.id}/delete`) Delete Video
         div.video__metadata 
             div.video__owner
                 small Uploaded by 
                 a(href=`/users/${video.owner._id}`)=video.owner.name
             small.video__date=video.createdAt
             small=video.hashtags
-    if String(video.owner._id) === String(loggedInUser._id)
-        //- relative url
-        a(href=`${video.id}/edit`) Edit Video
-        br
-        a(href=`${video.id}/delete`) Delete Video
 
     if loggedIn
         div.video__add-comments

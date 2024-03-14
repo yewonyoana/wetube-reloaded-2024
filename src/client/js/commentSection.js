@@ -16,19 +16,20 @@ const addComment = (text, id, userName) => {
 	newComment.className = "video__comment";
 	deleteIcon.className = "delete__icon";
 
-	username.innerText = `${userName}`;
-	comment.innerText = `${text}`;
-	deleteIcon.innerText = "❌";
-
 	newComment.appendChild(username);
+	username.innerText = `${userName}`;
+
 	newComment.appendChild(comment);
+	comment.innerText = `${text}`;
+
+	deleteIcon.innerText = "❌";
 	newComment.appendChild(deleteIcon);
 
 	videoComments.prepend(newComment);
 
-	deleteIcon.addEventListener("click", handleDelete);
-
 	console.log(newComment);
+
+	deleteIcon.addEventListener("click", handleDelete);
 };
 
 const handleSubmit = async (event) => {

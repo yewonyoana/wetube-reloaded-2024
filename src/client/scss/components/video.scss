@@ -4,6 +4,9 @@
 		border-radius: 30px;
 		width: 100%;
 		background-color: white;
+		&:hover {
+			border: 2.5px solid red;
+		}
 	}
 	.video-mixin__data {
 		padding: 0px 15px;
@@ -17,6 +20,7 @@
 			margin-top: 10px;
 			font-size: $small;
 			opacity: 0.5;
+			color: $gray;
 			span:first-child {
 				text-transform: uppercase;
 			}
