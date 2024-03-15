@@ -6,7 +6,7 @@ block content
         if loggedInUser.avatarUrl
             img(src=loggedInUser.avatarUrl).avatar
         else
-            span 😎
+            span :)
         h3=user.name
     div.video-grid
         each video in user.videos

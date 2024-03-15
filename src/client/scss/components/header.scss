@@ -21,13 +21,9 @@ header {
 			}
 		}
 		.header__btns {
-			span {
-				padding: 10px;
-				border-radius: 30px;
-				margin-right: 10px;
-				font-size: $small;
-				:hover {
-					color: red;
+			.header__loggedOut {
+				span:first-child {
+					margin-right: 10px;
 				}
 			}
 		}
@@ -35,12 +31,10 @@ header {
 	.nav__bar {
 		width: 100%;
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
-		font-size: $default;
+		font-size: $small;
 		span {
-			width: 100%;
-			padding: 10px 0px;
 			&:hover {
 				color: red;
 			}

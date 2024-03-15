@@ -7,8 +7,6 @@ header
         nav.header__btns
             if loggedIn 
                 span
-                    a(href="/users/logout") Logout
-                span
                     a(href=`/users/${loggedInUser._id}`)
                         if !loggedInUser.avatarUrl
                             span :)
@@ -18,16 +16,20 @@ header
                                     img.header__avatar(src=loggedInUser.avatarUrl,crossorigin)
                                 else
                                     img.header__avatar(src=loggedInUser.avatarUrl)
-                span 
-                    a(href=`/users/${loggedInUser._id}`) My Profile
-                span 
-                    a(href="/users/edit") Edit Profile
             else
-                span 
-                    a(href="/join") Join
-                span 
-                    a(href="/login") Login
+                div.header__loggedOut
+                    span 
+                        a(href="/join") Join
+                    span 
+                        a(href="/login") Login
     nav.nav__bar
         if loggedIn
             span
                 a(href="/videos/upload") Upload Video
+            span 
+                a(href=`/users/${loggedInUser._id}`) My Profile
+            span 
+                a(href="/users/edit") Edit Profile
+            span
+                a(href="/users/logout") Logout
+        

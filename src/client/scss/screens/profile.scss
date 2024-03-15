@@ -6,9 +6,12 @@
 	align-items: center;
 	margin-bottom: 50px;
 	img {
-		margin-bottom: 10px;
+		margin-bottom: 20px;
 	}
 	h3 {
 		font-size: $big;
+		text-transform: uppercase;
+		font-style: italic;
+		font-weight: 600;
 	}
 }

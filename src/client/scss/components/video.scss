@@ -15,15 +15,13 @@
 			margin-top: 10px;
 			font-size: $default;
 			text-transform: uppercase;
+			font-weight: 600;
 		}
 		.video-mixin__meta {
 			margin-top: 10px;
 			font-size: $small;
 			opacity: 0.5;
 			color: $gray;
-			span:first-child {
-				text-transform: uppercase;
-			}
 		}
 	}
 }
