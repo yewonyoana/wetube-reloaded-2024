@@ -13,17 +13,16 @@ const addComment = (text, id, userName) => {
 	const deleteIcon = document.createElement("span");
 
 	username.className = "comment__owner";
-	newComment.className = "video__comment";
-	deleteIcon.className = "delete__icon";
-
 	newComment.appendChild(username);
 	username.innerText = `${userName}`;
 
+	newComment.className = "video__comment";
 	newComment.appendChild(comment);
 	comment.innerText = `${text}`;
 
-	deleteIcon.innerText = "❌";
+	deleteIcon.className = "delete__icon";
 	newComment.appendChild(deleteIcon);
+	deleteIcon.innerText = "❌";
 
 	videoComments.prepend(newComment);
 
