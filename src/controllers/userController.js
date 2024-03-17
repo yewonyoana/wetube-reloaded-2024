@@ -111,7 +111,7 @@ export const finishGitHubLogin = async (req, res) => {
 		if (!user) {
 			// create an account
 			user = await User.create({
-				avatar: userData.avatar_url,
+				avatarUrl: userData.avatar_url,
 				name: userData.name,
 				username: userData.login,
 				email: emailObj.email,
@@ -122,7 +122,6 @@ export const finishGitHubLogin = async (req, res) => {
 		}
 		req.session.loggedIn = true;
 		req.session.user = user;
-		req.flash("info", "Bye Bye!");
 		return res.redirect("/");
 	} else {
 		return res.redirect("/login");
@@ -130,6 +129,7 @@ export const finishGitHubLogin = async (req, res) => {
 };
 
 export const logout = (req, res) => {
+	req.flash("info", "Bye Bye!");
 	req.session.destroy();
 	return res.redirect("/");
 };

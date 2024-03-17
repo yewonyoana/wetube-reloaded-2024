@@ -33,7 +33,7 @@ block content
             div.video__owner
                 small Uploaded by 
                 a(href=`/users/${video.owner._id}`)=video.owner.name
-            small.video__date=video.createdAt
+            small.video__date=new Date(video.createdAt).toLocaleDateString("eng", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})
             small=video.hashtags
 
     if loggedIn
